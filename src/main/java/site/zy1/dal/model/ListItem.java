@@ -22,8 +22,8 @@ public class ListItem {
 	private BigDecimal balance;
 	private String description;
 	private Date date;
-	@Column(name = "is_delete")
 	@JsonIgnore
+	@Column(name = "is_delete")
 	private boolean isDelete;
 
 	public boolean isDelete() {
