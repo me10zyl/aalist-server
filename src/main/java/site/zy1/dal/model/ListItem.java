@@ -26,6 +26,7 @@ public class ListItem {
 	@Column(name = "is_delete")
 	private boolean isDelete;
 
+	@JsonIgnore
 	public boolean isDelete() {
 		return isDelete;
 	}
