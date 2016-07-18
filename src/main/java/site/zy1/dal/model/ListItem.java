@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Table(name = "list_item")
@@ -23,16 +24,14 @@ public class ListItem {
 	private BigDecimal balance;
 	private String description;
 	private Date date;
-	@JsonIgnore
+	@JsonIgnoreProperties
 	@Column(name = "is_delete")
 	private boolean isDelete;
 
-	@JsonIgnore
 	public boolean isDelete() {
 		return isDelete;
 	}
 
-	@JsonIgnore
 	public void setDelete(boolean isDelete) {
 		this.isDelete = isDelete;
 	}
