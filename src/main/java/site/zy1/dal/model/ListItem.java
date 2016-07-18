@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 @Table(name = "list_item")
 @Entity
 public class ListItem {
@@ -31,6 +32,7 @@ public class ListItem {
 		return isDelete;
 	}
 
+	@JsonIgnore
 	public void setDelete(boolean isDelete) {
 		this.isDelete = isDelete;
 	}
