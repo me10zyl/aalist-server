@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Table(name = "list_item")
 @Entity
+@JsonIgnoreProperties({"delete"})
 public class ListItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,7 +25,6 @@ public class ListItem {
 	private BigDecimal balance;
 	private String description;
 	private Date date;
-	@JsonIgnoreProperties
 	@Column(name = "is_delete")
 	private boolean isDelete;
 
