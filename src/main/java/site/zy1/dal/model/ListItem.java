@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Table(name = "list_item")
 @Entity
 public class ListItem {
@@ -21,6 +23,7 @@ public class ListItem {
 	private String description;
 	private Date date;
 	@Column(name = "is_delete")
+	@JsonIgnore
 	private boolean isDelete;
 
 	public boolean isDelete() {
