@@ -19,7 +19,7 @@ public class ListItemDAO extends HibernateDaoSupport{
 	
 	@SuppressWarnings("unchecked")
 	public List<ListItem> list(){
-		List<ListItem> list = (List<ListItem>) getHibernateTemplate().find("from ListItem order by date desc"); 
+		List<ListItem> list = (List<ListItem>) getHibernateTemplate().find("from ListItem where isDelete != 1 order by date desc"); 
 		return list;
 	}
 	
@@ -28,9 +28,9 @@ public class ListItemDAO extends HibernateDaoSupport{
 	}
 	
 	public void delete(int id){
-		ListItem listItem = new ListItem();
-		listItem.setId(id);
-		getHibernateTemplate().delete(listItem);
+		ListItem listItem = getHibernateTemplate().get(ListItem.class, id);
+		listItem.setDelete(true);
+		getHibernateTemplate().update(listItem);
 	}
 
 }
